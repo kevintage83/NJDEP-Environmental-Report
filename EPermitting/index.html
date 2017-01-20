@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>NJ DEP DLUR Env. Rpt.</title>
+    <header id="header-wrap" class="li">
+      <ul>
+        <li class="li">Home</li>
+        <li class="li">Save</li>
+        <li class="li">Clear form</li>
+        <li class="li">Submit</li>
+      </ul>
+      <link rel="stylesheet" href="css/c01.css" />
+    </header>
+    <br/>
+    <br/>
+    <br/>
+  </head>
+  <script src="js/add-content.js"></script>
+
+  <body class="mainBody">
+    <form id="wholeForm" action="/login" method="post">
+      <form action="www.example.com/report.php" method="post">
+        <label for="nameField">Applicant Name:
+          <input type="text" name="applicantName" required placeholder="Enter full name" id="nameField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="fileNumField">File #:
+          <input type="text" name="fileNum" required placeholder="Enter application file number" id="fileNumField" pattern="[0-9]" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="blockNumField">Block(s):
+          <input type="text" name="Blocks" required multiple placeholder="Enter tax ID block(s)" id="blockNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="lotNumField">Lot(s):
+          <input type="text" name="Lots" required multiple placeholder="Enter tax ID lot(s)" id="lotNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="watershedMgtField">Watershed Management:
+          <input type="text" name="watershedManagement" required multiple placeholder="Enter watershed Mgt" id="watershedMgtField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="watershedField">Watershed:
+          <input type="text" name="Watershed" required multiple placeholder="Enter watershed name" id="watershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="subWatershedField"> Sub-watershed:
+          <input type="text" name="subWatershed" required multiple placeholder="Enter sub-watershed name" id="subWatershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="waterwayField"> Waterway:
+          <input type="text" name="waterway" required multiple placeholder="Enter waterway name" id="waterwayField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" title="The waterway name can be found using our online mapping tool at nj.dep.gov"
+          />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="waterClassification"> Water Classification:
+          <br />
+          <input type="checkbox" name="waterClassification" value="Trout Production" id="troutProd" />
+          <label for="troutProd">Trout Production</label>
+          <br />
+          <input type="checkbox" name="waterClassification" value="Trout Maintenance" id="troutMaint" />
+          <label for="troutMaint">Trout Maintenance</label>
+          <br />
+          <input type="checkbox" name="waterClassification" value="Non-Trout" id="nonTrout" />
+          <label for="nonTrout">Non-Trout</label>
+          <br />
+          <input type="checkbox" name="waterClassification" value="Category 1" id="cat1" />
+          <label for="cat1">Category 1</label>
+          <br />
+          <input type="checkbox" name="waterClassification" value="Trout Stocked" id="troutStocked" />
+          <label for="troutStocked">Trout Stocked</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="pinelandsPres">Pinelands Preservation Area?
+          <br />
+          <input type="radio" name="Pinelands PA" value="yes" id="pinelandsPresYes" />
+          <label for="pinelandsPresYes">Yes</label>
+          <br />
+          <input type="radio" name="Pinelands PA" value="no" id="pinelandsPresNo" />
+          <label for="pinelandsPresNo">No</label>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="fHAReg">Flood Hazard Area Regulated?
+          <br />
+          <input type="radio" name="FHA Regulated" value="yes" id="fHARegYes" />
+          <label for="fHARegYes">Yes</label>
+          <br />
+          <input type="radio" name="FHA Regulated" value="no" id="fHARegNo" />
+          <label for="fHARegNo">No</label>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="tidelandsClaim">Tidelands Claim?
+          <br />
+          <input type="radio" name="Tidelands Claim" value="yes" id="tidelandsClaimYes" />
+          <label for="tidelandsClaimYes">Yes</label>
+          <br />
+          <input type="radio" name="Tidelands Claim" value="no" id="tidelandsClaimNo" />
+          <label for="tidelandsClaimNo">No</label>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="wetlands">Wetlands?
+          <br />
+          <input type="radio" name="Wetlands" value="yes" id="wetlandsYes" />
+          <label for="wetlandsYes">Yes</label>
+          <br />
+          <input type="radio" name="Wetlands" value="no" id="wetlandsNo" />
+          <label for="wetlandsNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="ePAPriorityWetlands"> EPA Priority Wetlands?
+          <br />
+          <input type="radio" name="EPA Priority Wetlands" value="yes" id="ePAPriorityYes" />
+          <label for="ePAPriorityYes">Yes</label>
+          <br />
+          <input type="radio" name="EPA Priority Wetlands" value="no" id="ePAPriorityNo" />
+          <label for="ePAPriorityNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="tAndE">Threatened and Endangered Species Present?
+          <br />
+          <input type="radio" name="TandE" value="yes" id="tAndEYes" />
+          <label for="tAndEYes">Yes</label>
+          <br />
+          <input type="radio" name="TandE" value="no" id="tAndENo" />
+          <label for="tAndENo">No</label>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="vernalHabitat">Vernal Habitat?
+          <br />
+          <input type="radio" name="Vernal" value="yes" id="vernalHabitatYes" />
+          <label for="vernalHabitatYes">Yes</label>
+          <br />
+          <input type="radio" name="Vernal" value="no" id="vernalHabitatNo" />
+          <label for="vernalHabitatNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sHPOField">State Historic Preservation Office (SHPO)?
+          <br />
+          <input type="radio" name="SHPO" value="yes" id="sHPOYes" />
+          <label for="sHPOYes">Yes</label>
+          <br />
+          <input type="radio" name="SHPO" value="no" id="sHPONo" />
+          <label for="sHPONo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="fishAndWildlifeField">Fish & Wildlife?
+          <br />
+          <input type="radio" name="fishAndWildlife" value="yes" id="fishAndWildlifeYes" />
+          <label for="fishAndWildlifeYes">Yes</label>
+          <br />
+          <input type="radio" name="fishAndWildlife" value="no" id="fishAndWildlifeNo" />
+          <label for="fishAndWildlifeNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="greenAcresField">Comments from Green Acres?
+          <br />
+          <input type="radio" name="greenAcres" value="yes" id="greenAcresYes" />
+          <label for="greenAcresYes">Yes</label>
+          <br />
+          <input type="radio" name="greenAcres" value="no" id="greenAcresNo" />
+          <label for="greenAcresNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="rVCField">Resource Value Classification:
+          <input type="text" name="RVC" required multiple placeholder="Enter resource value classification" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" id="rVCField" />
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="pinelandsCertField">Pinelands Certification of Filing Submitted by Applicant?
+          <br />
+          <input type="radio" name="pinelandsCert" value="yes" id="pinelandsCertYes" />
+          <label for="pinelandsCertYes">Yes</label>
+          <br />
+          <input type="radio" name="pinelandsCert" value="no" id="pinelandsCertNo" />
+          <label for="pinelandsCertNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="highlandsPres">Highlands Preservation Area?
+          <br />
+          <input type="radio" name="highlandsPA" value="yes" id="highlandsPresYes" />
+          <label for="highlandsPresYes">Yes</label>
+          <br />
+          <input type="radio" name="highlandsPA" value="no" id="highlandsPresNo" />
+          <label for="highlandsPresNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="tidelandsClaimApp">Tidelands Claim Application Submitted?
+          <br />
+          <input type="radio" name="tidelandsClaim" value="yes" id="tidelandsClaimAppYes" />
+          <label for="tidelandsClaimAppYes">Yes</label>
+          <br />
+          <input type="radio" name="tidelandsClaim" value="no" id="tidelandsClaimAppNo" />
+          <label for="tidelandsClaimAppNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="tidalMapping">Tidal
+          <br />
+          <input type="radio" name="tidal" value="mapped" id="tidalMapped" />
+          <label for="tidalMapped">Mapped</label>
+          <br />
+          <input type="radio" name="tidal" value="unmapped" id="tidalUnmapped" />
+          <label for="tidalUnmapped">Unmapped</label>
+          <br />
+          <label for="claimNum">Claim #:
+            <input type="text" name="tidal" id="claimNum" required placeholder="Enter tidal claim #" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+          </label>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sWQRevField">Surface Water Quality Review?
+          <br />
+          <input type="radio" name="sWQReview" value="yes" id="sWQRevYes" />
+          <label for="sWQRevYes">Yes</label>
+          <br />
+          <input type="radio" name="sWQReview" value="no" id="sWQRevNo" />
+          <label for="sWQRevNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sentToTAndEField">Sent to T&E:
+          <input type="date" name="sentToTAndE" id="sentToTAndEField" />
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="riparianZoneField">Riparian Zone:
+          <br />
+          <input type="checkbox" name="riparianZone" value="50ft" id="riparian50" />
+          <label for="riparian50">50ft.</label>
+          <br />
+          <input type="checkbox" name="riparianZone" value="150ft" id="riparian150" />
+          <label for="riparian150">150 ft.</label>
+          <br />
+          <input type="checkbox" name="riparianZone" value="300ft" id="riparian300" />
+          <label for="riparian300">300 ft.</label>
+          <br />
+          <input type="checkbox" name="riparianZone" value="floodPlain" id="floodPlain" />
+          <label for="floodPlain">Flood Plain</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sentToSHPOField">Sent to SHPO:
+          <input type="date" name="sentToSHPO" id="sentToSHPOField" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sentToEPAField">Sent to EPA:
+          <input type="date" name="sentToEPA" id="sentToEPAField" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="ePAComments">Comments:
+        </label>
+        <br />
+        <textarea name="comments" cols="100" rows="10" id="ePAComments" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Enter your comments...
+        </textarea>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sentToGA">Sent to Green Acres:
+          <input type="date" name="sentToGreenAcres" id="sentToGA" />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sWQRev2">Surface Water Quality Review?</label>
+        <br />
+        <input type="radio" name="sWQReview2" value="yes" id="sWQRevYes2" />
+        <label for="sWQRevYes2">Yes</label>
+        <br />
+        <input type="radio" name="sWQReview2" value="no" id="sWQRevNo2" />
+        <label for="sWQRevNo2">No</label>
+        <br />
+      </form>
+      <label for="sWQRevType">Select one:</label>
+      <form action="www.example.com/report.php" method="post">
+        <select name="sWQRevType" id="sWQRevType">
+          <option value="select">Select...</option>
+          <option value="inFWWTA">in FWW Transition Area</option>
+          <option value="greaterThanQuarterAcreImperv">Greater Than 1/4 Acre in FWW or Transition Area</option>
+          <option value="greaterThan1AcreImperv">Greater Than 1 Acre in FWW or Transition Area</option>
+          <option value="outfallRiparian" />Outfall Riparian</option>
+          <option value="FHA" />FHA</option>
+          <option value="N/A" />N/A</option>
+        </select>
+      </form>
+      <br />
+      <form action="www.example.com/report.php" method="post">
+        <label for="fWWUndisturbed">FWW Undisturbed:
+          <input type="text" name="fWWUndisturbed" id="fWWUndisturbed" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" /> Acres
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="fWWPreserved">FWW Preserved:
+          <input type="text" name="fWWPreserved" id="fWWPreserved" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" multiple/> Acres
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="publicComments">Public Comments?
+          <br />
+          <input type="radio" name="publicComments" value="yes" id="publicCommentsYes" />
+          <label for="publicCommentsYes">Yes</label>
+          <br />
+          <input type="radio" name="publicComments" value="no" id="publicCommentsNo" />
+          <label for="publicCommentsNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="publicComments">
+          Comments:
+        </label>
+        <br />
+        <textarea name="publicComments" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="publicComments">Enter your comments...
+        </textarea>
+
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="existingStructures">
+          Existing structures?
+          <br />
+          <input type="radio" name="existingStructures" value="yes" id="existingStructuresYes" />
+          <label for="existingStructuresYes">Yes</label>
+          <br />
+          <input type="radio" name="existingStructures" value="no" id="existingStructuresNo" />
+          <label for="existingStructuresNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="mapDetails1974">
+          1974 Map Details:
+        </label>
+        <br />
+        <textarea name="mapDetails1974" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1974">Enter your details...
+        </textarea>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="mapDetails1977">
+          1977 Map Details:
+        </label>
+        <br />
+        <textarea name="mapDetails1977" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1977">Enter your details...
+        </textarea>
+      </form>
+      <form>
+        <label for="siteInspectionDate">
+          Site inspection date:
+          <input type="date" name="siteInspectionDate" id="siteInspectionDate" />
+        </label>
+        <br />
+        <label for="siteInspectionComments">
+          Site inspection comments:
+        </label>
+        <br />
+        <textarea name="siteInspectionComments" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="siteInspectionComments">Enter your comments...
+        </textarea>
+      </form>
+      <form>
+        <table>
+          <tr>
+            <th>Landscape:</th>
+            <th>Rank:</th>
+            <th>Species:</th>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <form action="www.example.com/report.php" method="post">
+                <select name="landscapeName">
+                  <option value="select">Select...</option>
+                  <option value="pinelands">Pinelands</option>
+                  <option value="highlands">Highlands</option>
+                  <option value="meadowlands">Meadowlands</option>
+                </select>
+              </form>
+            </th>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="rankName">
+                  <option value="select">Select...</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form action="www.example.com/report.php" method="post">
+                <select name="speciesName">
+                  <option value="select">Select...</option>
+                  <option value="baldEagle">Bald Eagle</option>
+                  <option value="bogTurtle">Bog Turtle</option>
+                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+                  <option value="leastTern">Least Tern</option>
+                  <option value="barredOwl">Barred Owl</option>
+                </select>
+              </form>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="waterQualDet">
+          Water Quality Consistency Determination:
+          <select name="waterQualDet" id="waterQualDet">
+            <option value="select">Select...</option>
+            <option value="hasACert">Has a certificate</option>
+            <option value="noCert">No Certificate</option>
+            <option value="notApplicable">N/A (e.g., on septic, etc.)</option>
+          </select>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="projectPipeline">
+          Is the project a pipeline?
+          <br/>
+          <input type="radio" name="pipeline" value="yes" id="projectPipelineYes" />
+          <label for="projectPipelineYes">Yes</label>
+          <br/>
+          <input type="radio" name="pipeline" value="no" id="projectPipelineNo" />
+          <label for="projectPipelineNo">No</label>
+          <br/>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="landscapeRegion">
+          Landscape/Region:
+          <select name="landscapeRegion" id="landscapeRegion">
+            <option value="select">Select...</option>
+            <option value="piedmont">Piedmont Plains</option>
+            <option value="highlands">Highlands</option>
+            <option value="skylands">Skylands</option>
+          </select>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="shellfishClass1963">
+          Shellfish Classification (1963 maps):
+          <select name="shellfishMap1963" id="shellfishClass1963">
+            <option value="select">Select...</option>
+            <option value="hardClamHigh">Hard clam (high)</option>
+            <option value="hardClamModerate">Hard clam (moderate)</option>
+            <option value="softClamHigh">Soft clam (high)</option>
+            <option value="softClamModerate">Soft clam (moderate)</option>
+            <option value="notApplicable">N/A</option>
+          </select>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="shellfishClass1986">
+          Shellfish Classification (1986 maps):
+          <select name="shellfishMap1986" id="shellfishClass1986">
+            <option value="select">Select...</option>
+            <option value="hardClamHigh">Hard clam (high)</option>
+            <option value="hardClamModerate">Hard clam (moderate)</option>
+            <option value="softClamHigh">Soft clam (high)</option>
+            <option value="softClamModerate">Soft clam (moderate)</option>
+            <option value="notApplicable">N/A</option>
+          </select>
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="deedRestriction">
+          Is a deed restriction required?
+          <br />
+          <input type="radio" name="deedRest" value="yes" id="deedRestYes" />
+          <label for="deedRestYes">Yes</label>
+          <br />
+          <input type="radio" name="deedRest" value="no" id="deedRestNo" />
+          <label for="deedRestNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="deedRestCondition">
+          Was a deed restriction requirement added as a condition to the permit?
+          <br />
+          <input type="radio" name="deedRestCond" value="yes" id="deedRestCondYes" />
+          <label for="deedRestCondYes">Yes</label>
+          <br />
+          <input type="radio" name="deedRestCond" value="no" id="deedRestCondNo" />
+          <label for="deedRestCondNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="waterClass">
+          Water Classification:
+          <br />
+          <select name="waterClass" id="waterClass">
+            <option value="select">Select...</option>
+            <option value="ordinary">Ordinary value</option>
+            <option value="exceptional">Exceptional value</option>
+            <option value="N/A" />N/A</option>
+          </select>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="shellfishContrib">
+          Is a shellfish contribution required?
+          <br />
+          <input type="radio" name="shellfishContrib" value="yes" id="shellfishContribYes" />
+          <label for="shellfishContribYes">Yes</label>
+          <br/>
+          <input type="radio" name="shellfishContrib" value="no" id="shellfishContribNo" />
+          <label for="shellfishContribNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="shellfishEquation">
+          If yes, use this equation:
+          <br />
+          <label for="shellfishEqHCH">
+            <input type="text" name="shellfishEq" required placeholder="Enter Sq. Ft. (beyond mean high water line)" id="shellfishEqHCH" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Sq. ft. (beyond mean high water line)'" /><em>x .75 (hard clam high, soft clam) x .25 x 25.73 = $</em>
+            <input type="text" name="shellfishEq" required placeholder="results go here" id="shellfishEqResult" onfocus="this.placeholder= ''" />
+          </label>
+        </label>
+        <br />
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sAVMapName1979">Submerged Aquatic Vegetation Map Name (1979):</label>
+        <input type="text" name="sAVMap1979" placeholder="Enter Map Name" id="sAVMapName1979" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
+        <input type="checkbox" name="sAVMap1979" id="sAVMap1979NA" />
+        <label for="sAVMap1979NA">N/A</label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="sAVMapName1986">Submerged Aquatic Vegetation Map Name (1986):</label>
+        <input type="text" name="sAVMap1986" placeholder="Enter Map Name" id="sAVMapName1986" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
+        <input type="checkbox" name="sAVMap1986" id="sAVMap1986NA" />
+        <label for="sAVMap1986NA">N/A</label>
+      </form>
+      <br/>
+      <form action="www.example.com/report.php" method="post">
+        <label for="landscapeRanked">
+          Is the site or adjacent area ranked 3, 4, or 5 under "Landscape?"
+          <br />
+          <input type="radio" name="landscapeRanked" value="yes" id="landscapeRankedYes" />
+          <label for="landscapeRankedYes">Yes</label>
+          <br/>
+          <input type="radio" name="landscapeRanked" value="no" id="landscapeRankedNo" />
+          <label for="landscapeRankedNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="ranked345">
+          If the site is ranked 3, 4, or 5 under "Landscape," has the application been reviewed by T&E?
+          <br />
+          <input type="radio" name="ranked345" value="yes" id="ranked345Yes" />
+          <label for="ranked345Yes">Yes</label>
+          <br/>
+          <input type="radio" name="ranked345" value="no" id="ranked345No" />
+          <label for="ranked345No">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="ranked345Comp">
+          If T&E reviewed the application, is the application in compliance?
+          <br />
+          <input type="radio" name="ranked345Comp" value="yes" id="ranked345CompYes" />
+          <label for="ranked345CompYes">Yes</label>
+          <br/>
+          <input type="radio" name="ranked345Comp" value="no" id="ranked345CompNo" />
+          <label for="ranked345CompNo">No</label>
+          <br />
+        </label>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="timingRestr">
+          Timing Restriction(s):
+        </label>
+        <br />
+        <textarea name="timingRestr" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="timingRestr">Enter your comments...
+        </textarea>
+        <br/>
+      </form>
+      <form action="www.example.com/report.php" method="post">
+        <label for="commentsAndSpcCond">
+          Comments/Special Conditions:
+        </label>
+        <br />
+        <textarea name="commentsAndSpcCond" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="commentsAndSpcCond">Enter your comments...
+        </textarea>
+        <br/>
+      </form>
+
+      <form action="/submit-form" method="post">
+        <label for="submitBtn1">
+          To complete this form, click Submit.
+        </label>
+        <!--you need to indent every item above the submit button.
+		The submit button needs to be in a "form" element that submits everything,
+		but it can't right now because it is not de-dented enough to encapsulate all the form elements! -->
+        <button type="submit" id="submitBtn" value="Submit" onclick="clearAndShow()">
+          Submit
+        </button>
+      </form>
+    </form>
+    <script src="js/utilities.js"></script>
+    <script src="js/submit-event.js"></script>
+  </body>
+
+</html>

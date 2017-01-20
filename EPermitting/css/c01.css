@@ -1,0 +1,49 @@
+#header-wrap {
+  position: fixed;
+  height: auto;
+  width: 100%;
+  z-index: 100;
+  text-size: 16px;
+  background-color: #efefef;
+  padding: 1px;
+}
+
+.li {
+  display: inline;
+  margin-right: 10px;
+  z-index: 2;
+}
+
+.mainBody {
+  padding-top: 5px;
+  z-index: 2;
+}
+
+#submitBtn {
+  height: 50px;
+  width: 120px;
+  background-color: green;
+  z-index: 2;
+}
+
+label {
+  line-height: 1.7em;
+  text-size: 100%;
+  z-index: 2;
+}
+
+p {
+  line-height: 1.7em;
+  text-size: 100%;
+  z-index: 2;
+}
+
+body {
+  color: black;
+  background-color: #d4d0c6;
+  font-family: Arial, "Times New Roman", serif;
+  background-image: url(images/dep_medium.gif);
+  background-position: 100px 100px;
+  background-attachment: fixed;
+  background-size: cover;
+}
