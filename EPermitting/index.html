@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
   <head>
+    <meta charset="utf-8" />
     <title>NJ DEP DLUR Env. Rpt.</title>
     <header id="header-wrap" class="li">
       <ul>
@@ -17,51 +19,62 @@
     <br/>
   </head>
   <script src="js/add-content.js"></script>
-
-  <body class="mainBody">
-    <form id="wholeForm" action="/login" method="post">
-      <form action="www.example.com/report.php" method="post">
-        <label for="nameField">Applicant Name:
+  <body class="mainBody"><a href="images/dep_large_beige.JPG"></a>
+    <form id="wholeForm" action="processForm.php" method="post" name="wholeForm">
+      <form action="processForm.php" method="post" name="nameField">
+        <label for="nameField">Applicant Name(s):
           <input type="text" name="applicantName" required placeholder="Enter full name" id="nameField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
+        <span id="myNameHint" class="hint"></span>
       </form>
-      <form action="www.example.com/report.php" method="post">
-        <label for="fileNumField">File #:
-          <input type="text" name="fileNum" required placeholder="Enter application file number" id="fileNumField" pattern="[0-9]" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      <form action="processForm.php" method="post" name="fileNumField">
+        <label for="fileNumField" name="fileNumField">File #:
+          <input type="number" name="fileNumField" required placeholder="Enter application file number" id="fileNumField" pattern="\d{4}[\-]\d{2}[\-]\d{4}[\.]\d{1}" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+          <span id="formError" class="error"></span>
         </label>
+        <span id="myFileHint" class="hint"></span>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post" name="blockNum">
         <label for="blockNumField">Block(s):
-          <input type="text" name="Blocks" required multiple placeholder="Enter tax ID block(s)" id="blockNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+          <input type="number" name="Blocks" required multiple placeholder="Enter tax ID block(s)" id="blockNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
+        <input type="checkbox" name="nAROW" value="na" id="blockNAROW" />
+        <label for="blockNAROW">N/A or ROW</label>
+        <span id="myBlockHint" class="hint"></span>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post" name="lotNum">
         <label for="lotNumField">Lot(s):
-          <input type="text" name="Lots" required multiple placeholder="Enter tax ID lot(s)" id="lotNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+          <input type="number" name="Lots" required multiple placeholder="Enter tax ID lot(s)" id="lotNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
+        <input type="checkbox" name="nAROW" value="na" id="lotNAROW" />
+        <label for="lotNAROW">N/A or ROW</label>
+        <span id="myLotHint" class="hint"></span>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post" name="wtrshdMgtField">
         <label for="watershedMgtField">Watershed Management:
           <input type="text" name="watershedManagement" required multiple placeholder="Enter watershed Mgt" id="watershedMgtField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
+        <input type="checkbox" name="wtrshdMgtNA" value="na" id="wtrshdMgtNA" />
+        <label for="wtrshdMgtNA">N/A</label>
+        <span id="myWtrshdMgtHint" class="hint"></span>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="watershedField">Watershed:
           <input type="text" name="Watershed" required multiple placeholder="Enter watershed name" id="watershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="subWatershedField"> Sub-watershed:
           <input type="text" name="subWatershed" required multiple placeholder="Enter sub-watershed name" id="subWatershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="waterwayField"> Waterway:
           <input type="text" name="waterway" required multiple placeholder="Enter waterway name" id="waterwayField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" title="The waterway name can be found using our online mapping tool at nj.dep.gov"
           />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="waterClassification"> Water Classification:
           <br />
           <input type="checkbox" name="waterClassification" value="Trout Production" id="troutProd" />
@@ -81,7 +94,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="pinelandsPres">Pinelands Preservation Area?
           <br />
           <input type="radio" name="Pinelands PA" value="yes" id="pinelandsPresYes" />
@@ -91,7 +104,7 @@
           <label for="pinelandsPresNo">No</label>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="fHAReg">Flood Hazard Area Regulated?
           <br />
           <input type="radio" name="FHA Regulated" value="yes" id="fHARegYes" />
@@ -101,7 +114,7 @@
           <label for="fHARegNo">No</label>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="tidelandsClaim">Tidelands Claim?
           <br />
           <input type="radio" name="Tidelands Claim" value="yes" id="tidelandsClaimYes" />
@@ -111,7 +124,7 @@
           <label for="tidelandsClaimNo">No</label>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="wetlands">Wetlands?
           <br />
           <input type="radio" name="Wetlands" value="yes" id="wetlandsYes" />
@@ -122,7 +135,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="ePAPriorityWetlands"> EPA Priority Wetlands?
           <br />
           <input type="radio" name="EPA Priority Wetlands" value="yes" id="ePAPriorityYes" />
@@ -133,7 +146,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="tAndE">Threatened and Endangered Species Present?
           <br />
           <input type="radio" name="TandE" value="yes" id="tAndEYes" />
@@ -143,7 +156,7 @@
           <label for="tAndENo">No</label>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="vernalHabitat">Vernal Habitat?
           <br />
           <input type="radio" name="Vernal" value="yes" id="vernalHabitatYes" />
@@ -154,7 +167,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sHPOField">State Historic Preservation Office (SHPO)?
           <br />
           <input type="radio" name="SHPO" value="yes" id="sHPOYes" />
@@ -165,7 +178,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="fishAndWildlifeField">Fish & Wildlife?
           <br />
           <input type="radio" name="fishAndWildlife" value="yes" id="fishAndWildlifeYes" />
@@ -176,7 +189,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="greenAcresField">Comments from Green Acres?
           <br />
           <input type="radio" name="greenAcres" value="yes" id="greenAcresYes" />
@@ -187,13 +200,13 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="rVCField">Resource Value Classification:
           <input type="text" name="RVC" required multiple placeholder="Enter resource value classification" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" id="rVCField" />
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="pinelandsCertField">Pinelands Certification of Filing Submitted by Applicant?
           <br />
           <input type="radio" name="pinelandsCert" value="yes" id="pinelandsCertYes" />
@@ -204,7 +217,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="highlandsPres">Highlands Preservation Area?
           <br />
           <input type="radio" name="highlandsPA" value="yes" id="highlandsPresYes" />
@@ -215,7 +228,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="tidelandsClaimApp">Tidelands Claim Application Submitted?
           <br />
           <input type="radio" name="tidelandsClaim" value="yes" id="tidelandsClaimAppYes" />
@@ -226,7 +239,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="tidalMapping">Tidal
           <br />
           <input type="radio" name="tidal" value="mapped" id="tidalMapped" />
@@ -240,7 +253,7 @@
           </label>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sWQRevField">Surface Water Quality Review?
           <br />
           <input type="radio" name="sWQReview" value="yes" id="sWQRevYes" />
@@ -251,13 +264,13 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sentToTAndEField">Sent to T&E:
           <input type="date" name="sentToTAndE" id="sentToTAndEField" />
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="riparianZoneField">Riparian Zone:
           <br />
           <input type="checkbox" name="riparianZone" value="50ft" id="riparian50" />
@@ -274,29 +287,29 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sentToSHPOField">Sent to SHPO:
           <input type="date" name="sentToSHPO" id="sentToSHPOField" />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sentToEPAField">Sent to EPA:
           <input type="date" name="sentToEPA" id="sentToEPAField" />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="ePAComments">Comments:
         </label>
         <br />
         <textarea name="comments" cols="100" rows="10" id="ePAComments" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Enter your comments...
         </textarea>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sentToGA">Sent to Green Acres:
           <input type="date" name="sentToGreenAcres" id="sentToGA" />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sWQRev2">Surface Water Quality Review?</label>
         <br />
         <input type="radio" name="sWQReview2" value="yes" id="sWQRevYes2" />
@@ -307,7 +320,7 @@
         <br />
       </form>
       <label for="sWQRevType">Select one:</label>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <select name="sWQRevType" id="sWQRevType">
           <option value="select">Select...</option>
           <option value="inFWWTA">in FWW Transition Area</option>
@@ -319,18 +332,18 @@
         </select>
       </form>
       <br />
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="fWWUndisturbed">FWW Undisturbed:
           <input type="text" name="fWWUndisturbed" id="fWWUndisturbed" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" /> Acres
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="fWWPreserved">FWW Preserved:
           <input type="text" name="fWWPreserved" id="fWWPreserved" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" multiple/> Acres
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="publicComments">Public Comments?
           <br />
           <input type="radio" name="publicComments" value="yes" id="publicCommentsYes" />
@@ -341,7 +354,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="publicComments">
           Comments:
         </label>
@@ -350,7 +363,7 @@
         </textarea>
 
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="existingStructures">
           Existing structures?
           <br />
@@ -362,7 +375,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="mapDetails1974">
           1974 Map Details:
         </label>
@@ -370,7 +383,7 @@
         <textarea name="mapDetails1974" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1974">Enter your details...
         </textarea>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="mapDetails1977">
           1977 Map Details:
         </label>
@@ -400,7 +413,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -410,7 +423,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -420,7 +433,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -434,7 +447,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -444,7 +457,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -454,7 +467,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -468,7 +481,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -478,7 +491,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -488,7 +501,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -502,7 +515,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -512,7 +525,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -522,7 +535,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -536,7 +549,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -546,7 +559,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -556,7 +569,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -570,7 +583,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -580,7 +593,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -590,7 +603,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -604,7 +617,7 @@
           </tr>
           <tr>
             <th>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="landscapeName">
                   <option value="select">Select...</option>
                   <option value="pinelands">Pinelands</option>
@@ -614,7 +627,7 @@
               </form>
             </th>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="rankName">
                   <option value="select">Select...</option>
                   <option value="3">3</option>
@@ -624,7 +637,7 @@
               </form>
             </td>
             <td>
-              <form action="www.example.com/report.php" method="post">
+              <form action="processForm.php" method="post">
                 <select name="speciesName">
                   <option value="select">Select...</option>
                   <option value="baldEagle">Bald Eagle</option>
@@ -638,7 +651,7 @@
           </tr>
         </table>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="waterQualDet">
           Water Quality Consistency Determination:
           <select name="waterQualDet" id="waterQualDet">
@@ -649,7 +662,7 @@
           </select>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="projectPipeline">
           Is the project a pipeline?
           <br/>
@@ -661,7 +674,7 @@
           <br/>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="landscapeRegion">
           Landscape/Region:
           <select name="landscapeRegion" id="landscapeRegion">
@@ -672,7 +685,7 @@
           </select>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="shellfishClass1963">
           Shellfish Classification (1963 maps):
           <select name="shellfishMap1963" id="shellfishClass1963">
@@ -685,7 +698,7 @@
           </select>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="shellfishClass1986">
           Shellfish Classification (1986 maps):
           <select name="shellfishMap1986" id="shellfishClass1986">
@@ -698,7 +711,7 @@
           </select>
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="deedRestriction">
           Is a deed restriction required?
           <br />
@@ -710,7 +723,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="deedRestCondition">
           Was a deed restriction requirement added as a condition to the permit?
           <br />
@@ -722,7 +735,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="waterClass">
           Water Classification:
           <br />
@@ -735,7 +748,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="shellfishContrib">
           Is a shellfish contribution required?
           <br />
@@ -747,7 +760,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="shellfishEquation">
           If yes, use this equation:
           <br />
@@ -758,20 +771,20 @@
         </label>
         <br />
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sAVMapName1979">Submerged Aquatic Vegetation Map Name (1979):</label>
         <input type="text" name="sAVMap1979" placeholder="Enter Map Name" id="sAVMapName1979" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
         <input type="checkbox" name="sAVMap1979" id="sAVMap1979NA" />
         <label for="sAVMap1979NA">N/A</label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="sAVMapName1986">Submerged Aquatic Vegetation Map Name (1986):</label>
         <input type="text" name="sAVMap1986" placeholder="Enter Map Name" id="sAVMapName1986" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
         <input type="checkbox" name="sAVMap1986" id="sAVMap1986NA" />
         <label for="sAVMap1986NA">N/A</label>
       </form>
       <br/>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="landscapeRanked">
           Is the site or adjacent area ranked 3, 4, or 5 under "Landscape?"
           <br />
@@ -783,7 +796,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="ranked345">
           If the site is ranked 3, 4, or 5 under "Landscape," has the application been reviewed by T&E?
           <br />
@@ -795,7 +808,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="ranked345Comp">
           If T&E reviewed the application, is the application in compliance?
           <br />
@@ -807,7 +820,7 @@
           <br />
         </label>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="timingRestr">
           Timing Restriction(s):
         </label>
@@ -816,7 +829,7 @@
         </textarea>
         <br/>
       </form>
-      <form action="www.example.com/report.php" method="post">
+      <form action="processForm.php" method="post">
         <label for="commentsAndSpcCond">
           Comments/Special Conditions:
         </label>
