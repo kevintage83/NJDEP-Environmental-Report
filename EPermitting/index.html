@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="en">
 
   <head>
@@ -18,841 +16,864 @@
     <br/>
     <br/>
   </head>
-  <script src="js/add-content.js"></script>
-  <body class="mainBody"><a href="images/dep_large_beige.JPG"></a>
-    <form id="wholeForm" action="processForm.php" method="post" name="wholeForm">
-      <form action="processForm.php" method="post" name="nameField">
-        <label for="nameField">Applicant Name(s):
-          <input type="text" name="applicantName" required placeholder="Enter full name" id="nameField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-        <span id="myNameHint" class="hint"></span>
-      </form>
-      <form action="processForm.php" method="post" name="fileNumField">
-        <label for="fileNumField" name="fileNumField">File #:
-          <input type="number" name="fileNumField" required placeholder="Enter application file number" id="fileNumField" pattern="\d{4}[\-]\d{2}[\-]\d{4}[\.]\d{1}" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-          <span id="formError" class="error"></span>
-        </label>
-        <span id="myFileHint" class="hint"></span>
-      </form>
-      <form action="processForm.php" method="post" name="blockNum">
-        <label for="blockNumField">Block(s):
-          <input type="number" name="Blocks" required multiple placeholder="Enter tax ID block(s)" id="blockNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-        <input type="checkbox" name="nAROW" value="na" id="blockNAROW" />
-        <label for="blockNAROW">N/A or ROW</label>
-        <span id="myBlockHint" class="hint"></span>
-      </form>
-      <form action="processForm.php" method="post" name="lotNum">
-        <label for="lotNumField">Lot(s):
-          <input type="number" name="Lots" required multiple placeholder="Enter tax ID lot(s)" id="lotNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-        <input type="checkbox" name="nAROW" value="na" id="lotNAROW" />
-        <label for="lotNAROW">N/A or ROW</label>
-        <span id="myLotHint" class="hint"></span>
-      </form>
-      <form action="processForm.php" method="post" name="wtrshdMgtField">
-        <label for="watershedMgtField">Watershed Management:
-          <input type="text" name="watershedManagement" required multiple placeholder="Enter watershed Mgt" id="watershedMgtField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-        <input type="checkbox" name="wtrshdMgtNA" value="na" id="wtrshdMgtNA" />
-        <label for="wtrshdMgtNA">N/A</label>
-        <span id="myWtrshdMgtHint" class="hint"></span>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="watershedField">Watershed:
-          <input type="text" name="Watershed" required multiple placeholder="Enter watershed name" id="watershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="subWatershedField"> Sub-watershed:
-          <input type="text" name="subWatershed" required multiple placeholder="Enter sub-watershed name" id="subWatershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="waterwayField"> Waterway:
-          <input type="text" name="waterway" required multiple placeholder="Enter waterway name" id="waterwayField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" title="The waterway name can be found using our online mapping tool at nj.dep.gov"
-          />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="waterClassification"> Water Classification:
-          <br />
-          <input type="checkbox" name="waterClassification" value="Trout Production" id="troutProd" />
-          <label for="troutProd">Trout Production</label>
-          <br />
-          <input type="checkbox" name="waterClassification" value="Trout Maintenance" id="troutMaint" />
-          <label for="troutMaint">Trout Maintenance</label>
-          <br />
-          <input type="checkbox" name="waterClassification" value="Non-Trout" id="nonTrout" />
-          <label for="nonTrout">Non-Trout</label>
-          <br />
-          <input type="checkbox" name="waterClassification" value="Category 1" id="cat1" />
-          <label for="cat1">Category 1</label>
-          <br />
-          <input type="checkbox" name="waterClassification" value="Trout Stocked" id="troutStocked" />
-          <label for="troutStocked">Trout Stocked</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="pinelandsPres">Pinelands Preservation Area?
-          <br />
-          <input type="radio" name="Pinelands PA" value="yes" id="pinelandsPresYes" />
-          <label for="pinelandsPresYes">Yes</label>
-          <br />
-          <input type="radio" name="Pinelands PA" value="no" id="pinelandsPresNo" />
-          <label for="pinelandsPresNo">No</label>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="fHAReg">Flood Hazard Area Regulated?
-          <br />
-          <input type="radio" name="FHA Regulated" value="yes" id="fHARegYes" />
-          <label for="fHARegYes">Yes</label>
-          <br />
-          <input type="radio" name="FHA Regulated" value="no" id="fHARegNo" />
-          <label for="fHARegNo">No</label>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="tidelandsClaim">Tidelands Claim?
-          <br />
-          <input type="radio" name="Tidelands Claim" value="yes" id="tidelandsClaimYes" />
-          <label for="tidelandsClaimYes">Yes</label>
-          <br />
-          <input type="radio" name="Tidelands Claim" value="no" id="tidelandsClaimNo" />
-          <label for="tidelandsClaimNo">No</label>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="wetlands">Wetlands?
-          <br />
-          <input type="radio" name="Wetlands" value="yes" id="wetlandsYes" />
-          <label for="wetlandsYes">Yes</label>
-          <br />
-          <input type="radio" name="Wetlands" value="no" id="wetlandsNo" />
-          <label for="wetlandsNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="ePAPriorityWetlands"> EPA Priority Wetlands?
-          <br />
-          <input type="radio" name="EPA Priority Wetlands" value="yes" id="ePAPriorityYes" />
-          <label for="ePAPriorityYes">Yes</label>
-          <br />
-          <input type="radio" name="EPA Priority Wetlands" value="no" id="ePAPriorityNo" />
-          <label for="ePAPriorityNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="tAndE">Threatened and Endangered Species Present?
-          <br />
-          <input type="radio" name="TandE" value="yes" id="tAndEYes" />
-          <label for="tAndEYes">Yes</label>
-          <br />
-          <input type="radio" name="TandE" value="no" id="tAndENo" />
-          <label for="tAndENo">No</label>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="vernalHabitat">Vernal Habitat?
-          <br />
-          <input type="radio" name="Vernal" value="yes" id="vernalHabitatYes" />
-          <label for="vernalHabitatYes">Yes</label>
-          <br />
-          <input type="radio" name="Vernal" value="no" id="vernalHabitatNo" />
-          <label for="vernalHabitatNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sHPOField">State Historic Preservation Office (SHPO)?
-          <br />
-          <input type="radio" name="SHPO" value="yes" id="sHPOYes" />
-          <label for="sHPOYes">Yes</label>
-          <br />
-          <input type="radio" name="SHPO" value="no" id="sHPONo" />
-          <label for="sHPONo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="fishAndWildlifeField">Fish & Wildlife?
-          <br />
-          <input type="radio" name="fishAndWildlife" value="yes" id="fishAndWildlifeYes" />
-          <label for="fishAndWildlifeYes">Yes</label>
-          <br />
-          <input type="radio" name="fishAndWildlife" value="no" id="fishAndWildlifeNo" />
-          <label for="fishAndWildlifeNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="greenAcresField">Comments from Green Acres?
-          <br />
-          <input type="radio" name="greenAcres" value="yes" id="greenAcresYes" />
-          <label for="greenAcresYes">Yes</label>
-          <br />
-          <input type="radio" name="greenAcres" value="no" id="greenAcresNo" />
-          <label for="greenAcresNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="rVCField">Resource Value Classification:
-          <input type="text" name="RVC" required multiple placeholder="Enter resource value classification" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" id="rVCField" />
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="pinelandsCertField">Pinelands Certification of Filing Submitted by Applicant?
-          <br />
-          <input type="radio" name="pinelandsCert" value="yes" id="pinelandsCertYes" />
-          <label for="pinelandsCertYes">Yes</label>
-          <br />
-          <input type="radio" name="pinelandsCert" value="no" id="pinelandsCertNo" />
-          <label for="pinelandsCertNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="highlandsPres">Highlands Preservation Area?
-          <br />
-          <input type="radio" name="highlandsPA" value="yes" id="highlandsPresYes" />
-          <label for="highlandsPresYes">Yes</label>
-          <br />
-          <input type="radio" name="highlandsPA" value="no" id="highlandsPresNo" />
-          <label for="highlandsPresNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="tidelandsClaimApp">Tidelands Claim Application Submitted?
-          <br />
-          <input type="radio" name="tidelandsClaim" value="yes" id="tidelandsClaimAppYes" />
-          <label for="tidelandsClaimAppYes">Yes</label>
-          <br />
-          <input type="radio" name="tidelandsClaim" value="no" id="tidelandsClaimAppNo" />
-          <label for="tidelandsClaimAppNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="tidalMapping">Tidal
-          <br />
-          <input type="radio" name="tidal" value="mapped" id="tidalMapped" />
-          <label for="tidalMapped">Mapped</label>
-          <br />
-          <input type="radio" name="tidal" value="unmapped" id="tidalUnmapped" />
-          <label for="tidalUnmapped">Unmapped</label>
-          <br />
-          <label for="claimNum">Claim #:
-            <input type="text" name="tidal" id="claimNum" required placeholder="Enter tidal claim #" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-          </label>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sWQRevField">Surface Water Quality Review?
-          <br />
-          <input type="radio" name="sWQReview" value="yes" id="sWQRevYes" />
-          <label for="sWQRevYes">Yes</label>
-          <br />
-          <input type="radio" name="sWQReview" value="no" id="sWQRevNo" />
-          <label for="sWQRevNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sentToTAndEField">Sent to T&E:
-          <input type="date" name="sentToTAndE" id="sentToTAndEField" />
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="riparianZoneField">Riparian Zone:
-          <br />
-          <input type="checkbox" name="riparianZone" value="50ft" id="riparian50" />
-          <label for="riparian50">50ft.</label>
-          <br />
-          <input type="checkbox" name="riparianZone" value="150ft" id="riparian150" />
-          <label for="riparian150">150 ft.</label>
-          <br />
-          <input type="checkbox" name="riparianZone" value="300ft" id="riparian300" />
-          <label for="riparian300">300 ft.</label>
-          <br />
-          <input type="checkbox" name="riparianZone" value="floodPlain" id="floodPlain" />
-          <label for="floodPlain">Flood Plain</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sentToSHPOField">Sent to SHPO:
-          <input type="date" name="sentToSHPO" id="sentToSHPOField" />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sentToEPAField">Sent to EPA:
-          <input type="date" name="sentToEPA" id="sentToEPAField" />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="ePAComments">Comments:
-        </label>
+  <script src="js/greeting.js"></script>
+  <body class="mainBody">
+    <form id="wholeForm" action="processForm.php" method="post" name="wholeForm" class="theWholeForm">
+
+
+      <label for="nameField" name="nameField"><b>Applicant Name(s)</b>:
+        <input type="text" name="applicantName" required placeholder="Enter full name" id="nameField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <span id="myNameHint" class="hint"></span>
+      <br/>
+
+
+      <label for="fileNumField" name="fileNumField"><b>File #</b>:
+        <input type="number" name="fileNumField" placeholder="Enter application file number" id="fileNumField" pattern="\d{4}[\-]\d{2}[\-]\d{4}[\.]\d{1}" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>      
+      <span id="myFileHint" class="hint"></span><span id="formError" class="error"></span>
+      <br />
+
+
+      <label for="blockNumField" name="blockNum"><b>Block(s)</b>:
+        <input type="number" name="Blocks" required multiple placeholder="Enter tax ID block(s)" id="blockNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <input type="checkbox" name="nAROW" value="na" id="blockNAROW" />
+      <label for="blockNAROW">N/A or ROW</label>
+      <span id="myBlockHint" class="hint"></span>
+      <br/>
+
+
+      <label for="lotNumField" name="lotNum"><b>Lot(s)</b>:
+        <input type="number" name="Lots" required multiple placeholder="Enter tax ID lot(s)" id="lotNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <input type="checkbox" name="nAROW" value="na" id="lotNAROW" />
+      <label for="lotNAROW">N/A or ROW</label>
+      <span id="myLotHint" class="hint"></span>
+      <br/>
+
+
+      <label for="watershedMgtField" name="wtrshdMgtField"><b>Watershed Management</b>:
+        <input type="text" name="watershedManagement" required multiple placeholder="Enter watershed Mgt" id="watershedMgtField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <input type="checkbox" name="wtrshdMgtNA" value="na" id="wtrshdMgtNA" />
+      <label for="wtrshdMgtNA">N/A</label>
+      <span id="myWtrshdMgtHint" class="hint"></span>
+      <br/>
+
+
+      <label for="watershedField"><b>Watershed</b>:
+        <input type="text" name="Watershed" required multiple placeholder="Enter watershed name" id="watershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <input type="checkbox" name="wtrshdNA" value="na" id="wtrshdNA" />
+      <label for="wtrshdNA">N/A</label>
+      <span id="myWtrshdHint" class="hint"></span>
+      <br/>
+
+
+      <label for="subWatershedField"><b>Sub-watershed</b>:
+        <input type="text" name="subWatershed" required multiple placeholder="Enter sub-watershed name" id="subWatershedField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <input type="checkbox" name="subWtrshdNA" value="na" id="subWtrshdNA" />
+      <label for="subWtrshdNA">N/A</label>
+      <span id="mySubWtrshdHint" class="hint"></span>
+      <br/>
+
+
+      <label for="waterwayField"><b>Waterway</b>:
+        <input type="text" name="waterway" required multiple placeholder="Enter waterway name" id="waterwayField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" title="The waterway name can be found using our online mapping tool at nj.dep.gov"
+        />
+      </label>
+      <input type="checkbox" name="waterwayNA" value="na" id="waterwayNA" />
+      <label for="waterwayNA">N/A</label>
+      <span id="myWaterwayHint" class="hint"></span>
+      <br/>
+
+
+      <label for="waterClassification"><b>Water Classification</b>:
         <br />
-        <textarea name="comments" cols="100" rows="10" id="ePAComments" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Enter your comments...
-        </textarea>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sentToGA">Sent to Green Acres:
-          <input type="date" name="sentToGreenAcres" id="sentToGA" />
+        <input type="checkbox" name="waterClassification" value="Trout Production" id="troutProd" />
+        <label for="troutProd">Trout Production</label>
+        <br />
+        <input type="checkbox" name="waterClassification" value="Trout Maintenance" id="troutMaint" />
+        <label for="troutMaint">Trout Maintenance</label>
+        <br />
+        <input type="checkbox" name="waterClassification" value="Non-Trout" id="nonTrout" />
+        <label for="nonTrout">Non-Trout</label>
+        <br />
+        <input type="checkbox" name="waterClassification" value="Category 1" id="cat1" />
+        <label for="cat1">Category 1</label>
+        <br />
+        <input type="checkbox" name="waterClassification" value="Trout Stocked" id="troutStocked" />
+        <label for="troutStocked">Trout Stocked</label>
+        <br />
+        <input type="checkbox" name="waterClassification" value="na" id="waterClassificationNA" />
+        <label for="waterClassificationNA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="pinelandsPres"><b>Pinelands Preservation Area</b>?
+        <br />
+        <input type="radio" name="Pinelands PA" value="yes" id="pinelandsPresYes" />
+        <label for="pinelandsPresYes">Yes</label>
+        <br />
+        <input type="radio" name="Pinelands PA" value="no" id="pinelandsPresNo" />
+        <label for="pinelandsPresNo">No</label>
+      </label>
+      <br/>
+
+
+      <label for="fHAReg"><b>Flood Hazard Area Regulated</b>?
+        <br />
+        <input type="radio" name="FHA Regulated" value="yes" id="fHARegYes" />
+        <label for="fHARegYes">Yes</label>
+        <br />
+        <input type="radio" name="FHA Regulated" value="no" id="fHARegNo" />
+        <label for="fHARegNo">No</label>
+      </label>
+      <br/>
+
+
+      <label for="wetlands"><b>Wetlands</b>?
+        <br />
+        <input type="radio" name="Wetlands" value="yes" id="wetlandsYes" />
+        <label for="wetlandsYes">Yes</label>
+        <br />
+        <input type="radio" name="Wetlands" value="no" id="wetlandsNo" />
+        <label for="wetlandsNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="ePAPriorityWetlands"><b>EPA Priority Wetlands</b>?
+        <br />
+        <input type="radio" name="EPA Priority Wetlands" value="yes" id="ePAPriorityYes" />
+        <label for="ePAPriorityYes">Yes</label>
+        <br />
+        <input type="radio" name="EPA Priority Wetlands" value="no" id="ePAPriorityNo" />
+        <label for="ePAPriorityNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="tAndE">Are <b>Threatened and Endangered Species</b> present on or adjacent to the project site?
+        <br />
+        <input type="radio" name="TandE" value="yes" id="tAndEYes" />
+        <label for="tAndEYes">Yes</label>
+        <br />
+        <input type="radio" name="TandE" value="no" id="tAndENo" />
+        <label for="tAndENo">No</label>
+      </label>
+      <br/>
+
+
+      <label for="vernalHabitat">Does the site have <b>Vernal Habitat</b>?
+        <br />
+        <input type="radio" name="Vernal" value="yes" id="vernalHabitatYes" />
+        <label for="vernalHabitatYes">Yes</label>
+        <br />
+        <input type="radio" name="Vernal" value="no" id="vernalHabitatNo" />
+        <label for="vernalHabitatNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="sHPOField">Does the project require review from the <b>State Historic Preservation Office (SHPO)</b>?
+        <br />
+        <input type="radio" name="SHPO" value="yes" id="sHPOYes" />
+        <label for="sHPOYes">Yes</label>
+        <br />
+        <input type="radio" name="SHPO" value="no" id="sHPONo" />
+        <label for="sHPONo">No</label>
+        <br />
+      </label>
+
+
+      <label for="fishAndWildlifeField">Does the project require review from <b>Fish & Wildlife</b>?
+        <br />
+        <input type="radio" name="fishAndWildlife" value="yes" id="fishAndWildlifeYes" />
+        <label for="fishAndWildlifeYes">Yes</label>
+        <br />
+        <input type="radio" name="fishAndWildlife" value="no" id="fishAndWildlifeNo" />
+        <label for="fishAndWildlifeNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="greenAcresField">Are there comments from <b>Green Acres</b>?
+        <br />
+        <input type="radio" name="greenAcres" value="yes" id="greenAcresYes" />
+        <label for="greenAcresYes">Yes</label>
+        <br />
+        <input type="radio" name="greenAcres" value="no" id="greenAcresNo" />
+        <label for="greenAcresNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="rVCField"><b>Resource Value Classification</b>:
+        <input type="text" name="RVC" required multiple placeholder="Enter resource value classification" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" id="rVCField" />
+        <input type="checkbox" name="rVCNA" value="na" id="rVCNA" />
+        <label for="rVCNA">N/A</label>
+        <span id="myRVCNAHint" class="hint"></span>
+        <br />
+      </label>
+
+
+      <label for="pinelandsCertField">Was a <b>Pinelands Certification of Filing</b> submitted by the Applicant?
+        <br />
+        <input type="radio" name="pinelandsCert" value="yes" id="pinelandsCertYes" />
+        <label for="pinelandsCertYes">Yes</label>
+        <br />
+        <input type="radio" name="pinelandsCert" value="no" id="pinelandsCertNo" />
+        <label for="pinelandsCertNo">No</label>
+        <br />
+        <input type="radio" name="pinelandsCert" value="na" id="pinelandsCertNA" />
+        <label for="pinelandsCertNA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="highlandsPres">Is the site located within the <b>Highlands Preservation Area</b>?
+        <br />
+        <input type="radio" name="highlandsPA" value="yes" id="highlandsPresYes" />
+        <label for="highlandsPresYes">Yes</label>
+        <br />
+        <input type="radio" name="highlandsPA" value="no" id="highlandsPresNo" />
+        <label for="highlandsPresNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="tidelandsClaim">Is there a <b>Tidelands Claim</b> on the site?
+        <br />
+        <input type="radio" name="Tidelands Claim" value="yes" id="tidelandsClaimYes" />
+        <label for="tidelandsClaimYes">Yes</label>
+        <br />
+        <input type="radio" name="Tidelands Claim" value="no" id="tidelandsClaimNo" />
+        <label for="tidelandsClaimNo">No</label>
+      </label>
+      <br/>
+
+
+      <label for="tidelandsClaimApp">Was a <b>Tidelands Claim Application</b> submitted?
+        <br />
+        <input type="radio" name="tidelandsClaim" value="yes" id="tidelandsClaimAppYes" />
+        <label for="tidelandsClaimAppYes">Yes</label>
+        <br />
+        <input type="radio" name="tidelandsClaim" value="no" id="tidelandsClaimAppNo" />
+        <label for="tidelandsClaimAppNo">No, but it requires one</label>
+        <br />
+        <input type="radio" name="tidelandsClaim" value="na" id="tidelandsClaimAppNA" />
+        <label for="tidelandsClaimAppNA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="tidalMapping">Is the site <b>mapped for Tidal</b>?
+        <br />
+        <input type="radio" name="tidal" value="mapped" id="tidalMapped" />
+        <label for="tidalMapped">Mapped</label>
+        <br />
+        <input type="radio" name="tidal" value="unmapped" id="tidalUnmapped" />
+        <label for="tidalUnmapped">Unmapped</label>
+        <br />
+
+
+        <label for="claimNum"><b>Claim #</b>:
+        <input type="text" name="tidal" id="claimNum" required placeholder="Enter tidal claim #" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
         </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sWQRev2">Surface Water Quality Review?</label>
+        <input type="checkbox" name="tidal" value="na" id="tidalNA" />
+        <label for="tidalNA">N/A</label>
+        <span id="myTidalClaimHint" class="hint"></span>
+      </label>
+      <br/>
+
+
+      <label for="sWQRevField">Is a <b>Surface Water Quality Review</b> required?
         <br />
-        <input type="radio" name="sWQReview2" value="yes" id="sWQRevYes2" />
-        <label for="sWQRevYes2">Yes</label>
+        <input type="radio" name="sWQReview" value="yes" id="sWQRevYes" />
+        <label for="sWQRevYes">Yes</label>
         <br />
-        <input type="radio" name="sWQReview2" value="no" id="sWQRevNo2" />
-        <label for="sWQRevNo2">No</label>
+        <input type="radio" name="sWQReview" value="no" id="sWQRevNo" />
+        <label for="sWQRevNo">No</label>
         <br />
-      </form>
-      <label for="sWQRevType">Select one:</label>
-      <form action="processForm.php" method="post">
-        <select name="sWQRevType" id="sWQRevType">
+        <input type="radio" name="sWQReview" value="na" id="sWQReviewNA" />
+        <label for="sWQReviewNA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="sentToTAndEField"><b>Sent to T&E</b>:
+        <input type="date" name="sentToTAndE" id="sentToTAndEField" />
+        <input type="checkbox" name="sentToTAndE" value="na" id="sentToTAndENA" />
+        <label for="sentToTAndENA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="riparianZoneField"><b>Riparian Zone</b>:
+        <br />
+        <input type="checkbox" name="riparianZone" value="50ft" id="riparian50" />
+        <label for="riparian50">50ft.</label>
+        <br />
+        <input type="checkbox" name="riparianZone" value="150ft" id="riparian150" />
+        <label for="riparian150">150 ft.</label>
+        <br />
+        <input type="checkbox" name="riparianZone" value="300ft" id="riparian300" />
+        <label for="riparian300">300 ft.</label>
+        <br />
+        <input type="checkbox" name="riparianZone" value="floodPlain" id="floodPlain" />
+        <label for="floodPlain">Flood Plain</label>
+        <br />
+        <input type="checkbox" name="riparianZone" value="na" id="riparianZoneNA" />
+        <label for="riparianZoneNA">N/A</label>
+        <br />
+      </label>
+
+
+      <label for="sentToSHPOField"><b>Sent to SHPO</b>:
+      <input type="date" name="sentToSHPO" id="sentToSHPOField" />
+      </label>
+      <input type="checkbox" name="sentToSHPO" value="na" id="sentToSHPONA" />
+      <label for="sentToSHPONA">N/A</label>
+      <br/>
+
+
+      <label for="sentToEPAField"><b>Sent to EPA</b>:
+        <input type="date" name="sentToEPA" id="sentToEPAField" />
+      </label>
+      <input type="checkbox" name="sentToEPA" value="na" id="sentToEPANA" />
+      <label for="sentToEPANA">N/A</label>
+      <br/>
+
+
+      <label for="ePAComments"><b>Comments</b>:
+      </label>
+      <br />
+      <textarea name="comments" cols="100" rows="10" id="ePAComments" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Enter your comments...
+      </textarea>
+      <br/>
+
+
+      <label for="sentToGA"><b>Sent to Green Acres</b>:
+        <input type="date" name="sentToGreenAcres" id="sentToGA" />
+      </label>
+      <br/>
+
+
+      <label for="sWQRev2">Does the project require a <b>Surface Water Quality Review?</b></label>
+      <br />
+      <input type="radio" name="sWQReview2" value="yes" id="sWQRevYes2" />
+      <label for="sWQRevYes2">Yes</label>
+      <br />
+      <input type="radio" name="sWQReview2" value="no" id="sWQRevNo2" />
+      <label for="sWQRevNo2">No</label>
+      <br />
+
+
+      <label for="sWQRevType"><b>Select one</b>:</label>
+      <select name="sWQRevType" id="sWQRevType">
+        <option value="select">Select...</option>
+        <option value="inFWWTA">in FWW Transition Area</option>
+        <option value="greaterThanQuarterAcreImperv">Greater Than 1/4 Acre in FWW or Transition Area</option>
+        <option value="greaterThan1AcreImperv">Greater Than 1 Acre in FWW or Transition Area</option>
+        <option value="outfallRiparian" />Outfall Riparian</option>
+        <option value="FHA" />FHA</option>
+        <option value="N/A" />N/A</option>
+      </select>
+      <br />
+
+
+      <label for="fWWUndisturbed">How many acres of <b>Freshwater Wetlands</b> will be <b>Undisturbed</b> on the project site?
+        <input type="text" name="fWWUndisturbed" id="fWWUndisturbed" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" /> acres
+        <br />
+      </label>
+
+
+      <label for="fWWPreserved">How many acres of <b>Freshwater Wetlands</b> will be <b>Preserved</b> on the project site?
+        <input type="text" name="fWWPreserved" id="fWWPreserved" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" multiple/> acres
+      </label>
+
+      <br/>
+      <label for="publicComments">Are there any <b>Public Comments</b> associated with the project?
+        <br />
+        <input type="radio" name="publicComments" value="yes" id="publicCommentsYes" />
+        <label for="publicCommentsYes">Yes</label>
+        <br />
+        <input type="radio" name="publicComments" value="no" id="publicCommentsNo" />
+        <label for="publicCommentsNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="publicComments">
+      <b>Comments</b>:
+      </label>
+      <br />
+      <textarea name="publicComments" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="publicComments">Enter your comments...
+      </textarea>
+      <br/>
+
+
+      <label for="existingStructures">
+        Are there any <b>Existing structures</b> on the site?
+        <br />
+        <input type="radio" name="existingStructures" value="yes" id="existingStructuresYes" />
+        <label for="existingStructuresYes">Yes</label>
+        <br />
+        <input type="radio" name="existingStructures" value="no" id="existingStructuresNo" />
+        <label for="existingStructuresNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="mapDetails1974">
+      <b>1974 Map Details</b>:
+      </label>
+      <br />
+      <textarea name="mapDetails1974" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1974">Enter your details...
+      </textarea>
+
+
+      <br/>
+      <label for="mapDetails1977">
+      <b>1977 Map Details</b>:
+      </label>
+      <br />
+      <textarea name="mapDetails1977" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1977">Enter your details...
+      </textarea>
+      <br/>
+
+
+      <label for="siteInspectionDate">
+      <b>Site inspection date</b>:
+      <input type="date" name="siteInspectionDate" id="siteInspectionDate" />
+      </label>
+      <br />
+
+
+      <label for="siteInspectionComments">
+      <b>Site inspection comments</b>:
+      </label>
+      <br />
+      <textarea name="siteInspectionComments" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="siteInspectionComments">Enter your comments...
+      </textarea>
+      <br/>
+
+
+      <table>
+        <tr>
+          <th>Landscape:</th>
+          <th>Rank:</th>
+          <th>Species:</th>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <select name="landscapeName">
+              <option value="select">Select...</option>
+              <option value="pinelands">Pinelands</option>
+              <option value="highlands">Highlands</option>
+              <option value="meadowlands">Meadowlands</option>
+            </select>
+          </th>
+          <td>
+            <select name="rankName">
+              <option value="select">Select...</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </td>
+          <td>
+            <select name="speciesName">
+              <option value="select">Select...</option>
+              <option value="baldEagle">Bald Eagle</option>
+              <option value="bogTurtle">Bog Turtle</option>
+              <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
+              <option value="leastTern">Least Tern</option>
+              <option value="barredOwl">Barred Owl</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <br/>
+
+
+      <label for="waterQualDet">
+      <b>Water Quality Consistency Determination</b>:
+        <select name="waterQualDet" id="waterQualDet">
           <option value="select">Select...</option>
-          <option value="inFWWTA">in FWW Transition Area</option>
-          <option value="greaterThanQuarterAcreImperv">Greater Than 1/4 Acre in FWW or Transition Area</option>
-          <option value="greaterThan1AcreImperv">Greater Than 1 Acre in FWW or Transition Area</option>
-          <option value="outfallRiparian" />Outfall Riparian</option>
-          <option value="FHA" />FHA</option>
+          <option value="hasACert">Has a certificate</option>
+          <option value="noCert">No Certificate</option>
+          <option value="notApplicable">N/A (e.g., on septic, etc.)</option>
+        </select>
+      </label>
+      <br/>
+
+
+      <label for="projectPipeline">
+      <b>Is the project a pipeline?</b>
+        <br/>
+        <input type="radio" name="pipeline" value="yes" id="projectPipelineYes" />
+        <label for="projectPipelineYes">Yes</label>
+        <br/>
+        <input type="radio" name="pipeline" value="no" id="projectPipelineNo" />
+        <label for="projectPipelineNo">No</label>
+        <br/>
+      </label>
+      <br/>
+
+
+      <label for="landscapeRegion">
+      <b>Landscape/Region</b>:
+        <select name="landscapeRegion" id="landscapeRegion">
+          <option value="select">Select...</option>
+          <option value="piedmont">Piedmont Plains</option>
+          <option value="highlands">Highlands</option>
+          <option value="skylands">Skylands</option>
+        </select>
+      </label>
+
+
+      <br/>
+      <label for="shellfishClass1963">
+      <b>Shellfish Classification (1963 maps)</b>:
+        <select name="shellfishMap1963" id="shellfishClass1963">
+          <option value="select">Select...</option>
+          <option value="hardClamHigh">Hard clam (high)</option>
+          <option value="hardClamModerate">Hard clam (moderate)</option>
+          <option value="softClamHigh">Soft clam (high)</option>
+          <option value="softClamModerate">Soft clam (moderate)</option>
+          <option value="notApplicable">N/A</option>
+        </select>
+      </label>
+
+
+      <br/>
+      <label for="shellfishClass1986">
+      <b>Shellfish Classification (1986 maps)</b>:
+        <select name="shellfishMap1986" id="shellfishClass1986">
+          <option value="select">Select...</option>
+          <option value="hardClamHigh">Hard clam (high)</option>
+          <option value="hardClamModerate">Hard clam (moderate)</option>
+          <option value="softClamHigh">Soft clam (high)</option>
+          <option value="softClamModerate">Soft clam (moderate)</option>
+          <option value="notApplicable">N/A</option>
+        </select>
+      </label>
+      <br/>
+
+
+      <label for="deedRestriction">
+      <b>Is a deed restriction required?</b>
+        <br />
+        <input type="radio" name="deedRest" value="yes" id="deedRestYes" />
+        <label for="deedRestYes">Yes</label>
+        <br />
+        <input type="radio" name="deedRest" value="no" id="deedRestNo" />
+        <label for="deedRestNo">No</label>
+        <br />
+      </label>
+      <br/>
+
+
+      <label for="deedRestCondition">
+      <b>Was a deed restriction requirement added as a condition to the permit?</b>
+        <br />
+        <input type="radio" name="deedRestCond" value="yes" id="deedRestCondYes" />
+        <label for="deedRestCondYes">Yes</label>
+        <br />
+        <input type="radio" name="deedRestCond" value="no" id="deedRestCondNo" />
+        <label for="deedRestCondNo">No</label>
+        <br />
+      </label>
+      <br/>
+
+
+      <label for="waterClass">
+      <b>Water Classification</b>:
+        <br />
+        <select name="waterClass" id="waterClass">
+          <option value="select">Select...</option>
+          <option value="ordinary">Ordinary value</option>
+          <option value="exceptional">Exceptional value</option>
           <option value="N/A" />N/A</option>
         </select>
-      </form>
-      <br />
-      <form action="processForm.php" method="post">
-        <label for="fWWUndisturbed">FWW Undisturbed:
-          <input type="text" name="fWWUndisturbed" id="fWWUndisturbed" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" /> Acres
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="fWWPreserved">FWW Preserved:
-          <input type="text" name="fWWPreserved" id="fWWPreserved" placeholder="Enter a number." onfocus="this.placeholder= ''" onblur="this.placeholder= 'Optional.'" multiple/> Acres
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="publicComments">Public Comments?
-          <br />
-          <input type="radio" name="publicComments" value="yes" id="publicCommentsYes" />
-          <label for="publicCommentsYes">Yes</label>
-          <br />
-          <input type="radio" name="publicComments" value="no" id="publicCommentsNo" />
-          <label for="publicCommentsNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="publicComments">
-          Comments:
-        </label>
         <br />
-        <textarea name="publicComments" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="publicComments">Enter your comments...
-        </textarea>
-
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="existingStructures">
-          Existing structures?
-          <br />
-          <input type="radio" name="existingStructures" value="yes" id="existingStructuresYes" />
-          <label for="existingStructuresYes">Yes</label>
-          <br />
-          <input type="radio" name="existingStructures" value="no" id="existingStructuresNo" />
-          <label for="existingStructuresNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="mapDetails1974">
-          1974 Map Details:
-        </label>
-        <br />
-        <textarea name="mapDetails1974" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1974">Enter your details...
-        </textarea>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="mapDetails1977">
-          1977 Map Details:
-        </label>
-        <br />
-        <textarea name="mapDetails1977" cols="100" rows="5" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="mapDetails1977">Enter your details...
-        </textarea>
-      </form>
-      <form>
-        <label for="siteInspectionDate">
-          Site inspection date:
-          <input type="date" name="siteInspectionDate" id="siteInspectionDate" />
-        </label>
-        <br />
-        <label for="siteInspectionComments">
-          Site inspection comments:
-        </label>
-        <br />
-        <textarea name="siteInspectionComments" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="siteInspectionComments">Enter your comments...
-        </textarea>
-      </form>
-      <form>
-        <table>
-          <tr>
-            <th>Landscape:</th>
-            <th>Rank:</th>
-            <th>Species:</th>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <form action="processForm.php" method="post">
-                <select name="landscapeName">
-                  <option value="select">Select...</option>
-                  <option value="pinelands">Pinelands</option>
-                  <option value="highlands">Highlands</option>
-                  <option value="meadowlands">Meadowlands</option>
-                </select>
-              </form>
-            </th>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="rankName">
-                  <option value="select">Select...</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </form>
-            </td>
-            <td>
-              <form action="processForm.php" method="post">
-                <select name="speciesName">
-                  <option value="select">Select...</option>
-                  <option value="baldEagle">Bald Eagle</option>
-                  <option value="bogTurtle">Bog Turtle</option>
-                  <option value="blackCrownedNightHeron">Black Crowned Night Heron</option>
-                  <option value="leastTern">Least Tern</option>
-                  <option value="barredOwl">Barred Owl</option>
-                </select>
-              </form>
-            </td>
-          </tr>
-        </table>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="waterQualDet">
-          Water Quality Consistency Determination:
-          <select name="waterQualDet" id="waterQualDet">
-            <option value="select">Select...</option>
-            <option value="hasACert">Has a certificate</option>
-            <option value="noCert">No Certificate</option>
-            <option value="notApplicable">N/A (e.g., on septic, etc.)</option>
-          </select>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="projectPipeline">
-          Is the project a pipeline?
-          <br/>
-          <input type="radio" name="pipeline" value="yes" id="projectPipelineYes" />
-          <label for="projectPipelineYes">Yes</label>
-          <br/>
-          <input type="radio" name="pipeline" value="no" id="projectPipelineNo" />
-          <label for="projectPipelineNo">No</label>
-          <br/>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="landscapeRegion">
-          Landscape/Region:
-          <select name="landscapeRegion" id="landscapeRegion">
-            <option value="select">Select...</option>
-            <option value="piedmont">Piedmont Plains</option>
-            <option value="highlands">Highlands</option>
-            <option value="skylands">Skylands</option>
-          </select>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="shellfishClass1963">
-          Shellfish Classification (1963 maps):
-          <select name="shellfishMap1963" id="shellfishClass1963">
-            <option value="select">Select...</option>
-            <option value="hardClamHigh">Hard clam (high)</option>
-            <option value="hardClamModerate">Hard clam (moderate)</option>
-            <option value="softClamHigh">Soft clam (high)</option>
-            <option value="softClamModerate">Soft clam (moderate)</option>
-            <option value="notApplicable">N/A</option>
-          </select>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="shellfishClass1986">
-          Shellfish Classification (1986 maps):
-          <select name="shellfishMap1986" id="shellfishClass1986">
-            <option value="select">Select...</option>
-            <option value="hardClamHigh">Hard clam (high)</option>
-            <option value="hardClamModerate">Hard clam (moderate)</option>
-            <option value="softClamHigh">Soft clam (high)</option>
-            <option value="softClamModerate">Soft clam (moderate)</option>
-            <option value="notApplicable">N/A</option>
-          </select>
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="deedRestriction">
-          Is a deed restriction required?
-          <br />
-          <input type="radio" name="deedRest" value="yes" id="deedRestYes" />
-          <label for="deedRestYes">Yes</label>
-          <br />
-          <input type="radio" name="deedRest" value="no" id="deedRestNo" />
-          <label for="deedRestNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="deedRestCondition">
-          Was a deed restriction requirement added as a condition to the permit?
-          <br />
-          <input type="radio" name="deedRestCond" value="yes" id="deedRestCondYes" />
-          <label for="deedRestCondYes">Yes</label>
-          <br />
-          <input type="radio" name="deedRestCond" value="no" id="deedRestCondNo" />
-          <label for="deedRestCondNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="waterClass">
-          Water Classification:
-          <br />
-          <select name="waterClass" id="waterClass">
-            <option value="select">Select...</option>
-            <option value="ordinary">Ordinary value</option>
-            <option value="exceptional">Exceptional value</option>
-            <option value="N/A" />N/A</option>
-          </select>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="shellfishContrib">
-          Is a shellfish contribution required?
-          <br />
-          <input type="radio" name="shellfishContrib" value="yes" id="shellfishContribYes" />
-          <label for="shellfishContribYes">Yes</label>
-          <br/>
-          <input type="radio" name="shellfishContrib" value="no" id="shellfishContribNo" />
-          <label for="shellfishContribNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="shellfishEquation">
-          If yes, use this equation:
-          <br />
-          <label for="shellfishEqHCH">
-            <input type="text" name="shellfishEq" required placeholder="Enter Sq. Ft. (beyond mean high water line)" id="shellfishEqHCH" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Sq. ft. (beyond mean high water line)'" /><em>x .75 (hard clam high, soft clam) x .25 x 25.73 = $</em>
-            <input type="text" name="shellfishEq" required placeholder="results go here" id="shellfishEqResult" onfocus="this.placeholder= ''" />
-          </label>
-        </label>
-        <br />
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sAVMapName1979">Submerged Aquatic Vegetation Map Name (1979):</label>
-        <input type="text" name="sAVMap1979" placeholder="Enter Map Name" id="sAVMapName1979" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
-        <input type="checkbox" name="sAVMap1979" id="sAVMap1979NA" />
-        <label for="sAVMap1979NA">N/A</label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="sAVMapName1986">Submerged Aquatic Vegetation Map Name (1986):</label>
-        <input type="text" name="sAVMap1986" placeholder="Enter Map Name" id="sAVMapName1986" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
-        <input type="checkbox" name="sAVMap1986" id="sAVMap1986NA" />
-        <label for="sAVMap1986NA">N/A</label>
-      </form>
+      </label>
       <br/>
-      <form action="processForm.php" method="post">
-        <label for="landscapeRanked">
-          Is the site or adjacent area ranked 3, 4, or 5 under "Landscape?"
-          <br />
-          <input type="radio" name="landscapeRanked" value="yes" id="landscapeRankedYes" />
-          <label for="landscapeRankedYes">Yes</label>
-          <br/>
-          <input type="radio" name="landscapeRanked" value="no" id="landscapeRankedNo" />
-          <label for="landscapeRankedNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="ranked345">
-          If the site is ranked 3, 4, or 5 under "Landscape," has the application been reviewed by T&E?
-          <br />
-          <input type="radio" name="ranked345" value="yes" id="ranked345Yes" />
-          <label for="ranked345Yes">Yes</label>
-          <br/>
-          <input type="radio" name="ranked345" value="no" id="ranked345No" />
-          <label for="ranked345No">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="ranked345Comp">
-          If T&E reviewed the application, is the application in compliance?
-          <br />
-          <input type="radio" name="ranked345Comp" value="yes" id="ranked345CompYes" />
-          <label for="ranked345CompYes">Yes</label>
-          <br/>
-          <input type="radio" name="ranked345Comp" value="no" id="ranked345CompNo" />
-          <label for="ranked345CompNo">No</label>
-          <br />
-        </label>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="timingRestr">
-          Timing Restriction(s):
-        </label>
-        <br />
-        <textarea name="timingRestr" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="timingRestr">Enter your comments...
-        </textarea>
-        <br/>
-      </form>
-      <form action="processForm.php" method="post">
-        <label for="commentsAndSpcCond">
-          Comments/Special Conditions:
-        </label>
-        <br />
-        <textarea name="commentsAndSpcCond" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="commentsAndSpcCond">Enter your comments...
-        </textarea>
-        <br/>
-      </form>
 
-      <form action="/submit-form" method="post">
-        <label for="submitBtn1">
-          To complete this form, click Submit.
+
+      <label for="shellfishContrib">
+        Is a <b>shellfish contribution required</b>?
+        <br />
+        <input type="radio" name="shellfishContrib" value="yes" id="shellfishContribYes" />
+        <label for="shellfishContribYes">Yes</label>
+        <br/>
+        <input type="radio" name="shellfishContrib" value="no" id="shellfishContribNo" />
+        <label for="shellfishContribNo">No</label>
+        <br />
+      </label>
+      <br/>
+
+
+      <label for="shellfishEquation">
+        If yes, use this equation:
+        <br />
+        <label for="shellfishEqHCH">
+          <input type="text" name="shellfishEq" required placeholder="Enter Sq. Ft. (beyond mean high water line)" id="shellfishEqHCH" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Sq. ft. (beyond mean high water line)'" /><em>x .75 (hard clam high, soft clam) x .25 x 25.73 = $</em>
+          <input type="text" name="shellfishEq" required placeholder="results go here" id="shellfishEqResult" onfocus="this.placeholder= ''" />
         </label>
-        <!--you need to indent every item above the submit button.
-		The submit button needs to be in a "form" element that submits everything,
-		but it can't right now because it is not de-dented enough to encapsulate all the form elements! -->
-        <button type="submit" id="submitBtn" value="Submit" onclick="clearAndShow()">
-          Submit
-        </button>
-      </form>
-    </form>
-    <script src="js/utilities.js"></script>
-    <script src="js/submit-event.js"></script>
+      </label>
+      <br />
+
+
+      <label for="sAVMapName1979"><b>Submerged Aquatic Vegetation Map Name (1979)</b>:</label>
+      <input type="text" name="sAVMap1979" placeholder="Enter Map Name" id="sAVMapName1979" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
+      <input type="checkbox" name="sAVMap1979" id="sAVMap1979NA" />
+      <label for="sAVMap1979NA">N/A</label>
+      <br/>
+
+
+      <label for="sAVMapName1986"><b>Submerged Aquatic Vegetation Map Name (1986)</b>:</label>
+      <input type="text" name="sAVMap1986" placeholder="Enter Map Name" id="sAVMapName1986" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Click N/A if not applicable.'" />
+      <input type="checkbox" name="sAVMap1986" id="sAVMap1986NA" />
+      <label for="sAVMap1986NA">N/A</label>
+      <br/>
+
+
+      <label for="landscapeRanked">
+        Is the site or adjacent area <b>ranked 3, 4, or 5 under "Landscape 3.1" in ArcGIS?</b> 
+        <br />
+        <input type="radio" name="landscapeRanked" value="yes" id="landscapeRankedYes" />
+        <label for="landscapeRankedYes">Yes</label>
+        <br/>
+        <input type="radio" name="landscapeRanked" value="no" id="landscapeRankedNo" />
+        <label for="landscapeRankedNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="ranked345">
+        If the site <em>is</em> ranked 3, 4, or 5 under "Landscape 3.1" in ArcGIS, <b>has the application been reviewed by T&E</b>?
+        <br />
+        <input type="radio" name="ranked345" value="yes" id="ranked345Yes" />
+        <label for="ranked345Yes">Yes</label>
+        <br/>
+        <input type="radio" name="ranked345" value="no" id="ranked345No" />
+        <label for="ranked345No">No</label>
+        <br />
+      </label>
+
+
+      <label for="ranked345Comp">
+        If <b>T&E reviewed</b> the application, is the <b>application in compliance</b>?
+        <br />
+        <input type="radio" name="ranked345Comp" value="yes" id="ranked345CompYes" />
+        <label for="ranked345CompYes">Yes</label>
+        <br/>
+        <input type="radio" name="ranked345Comp" value="no" id="ranked345CompNo" />
+        <label for="ranked345CompNo">No</label>
+        <br />
+      </label>
+
+
+      <label for="timingRestr">
+      <b>Timing Restriction(s)</b>:
+      </label>
+      <br />
+      <textarea name="timingRestr" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="timingRestr">Enter your comments...
+      </textarea>
+      <br/>
+
+
+      <label for="commentsAndSpcCond">
+      <b>Comments/Special Conditions</b>:
+      </label>
+      <br />
+      <textarea name="commentsAndSpcCond" cols="100" rows="10" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" id="commentsAndSpcCond">Enter your comments...
+      </textarea>
+      <br/>
+
+
+        <label for="submitBtn1">
+          To complete this form, <b>click Submit</b>.
+        </label>
+         <input type="submit" id="submitBtn" value="Submit" onclick="display()"/>
+        <script src="js/utilitiesV2.js"></script>
+        <script src="js/submit-event.js"></script>
+<p> Message is: </p><span id = "display_message"></span>
+     </form>
   </body>
 
 </html>
