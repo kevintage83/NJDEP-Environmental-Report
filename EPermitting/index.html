@@ -5,16 +5,15 @@
     <title>NJ DEP DLUR Env. Rpt.</title>
     <header id="header-wrap" class="li">
       <ul>
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/';" value="NJDEP Home" class="li" name="homeBtn" />
         <input type="submit" id="submitBtnHeader" value="Submit" onclick="display()" class="li" name="submitBtn" />
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_7.pdf'" name="cZMRulesBtn" value="CZM Rules 7:7" class="li">
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_7a.pdf'" name="fWWRulesBtn" value="FWW Rules 7:7a" class="li">
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_8.pdf'" name="sWMRulesBtn" value="SWM Rules 7:8" class="li">
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_9b.pdf'" name="sWQRulesBtn" value="SWQ Rules 7:9b" class="li">
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_13.pdf'" name="fHARulesBtn" value="FHA Rules 7:13" class="li">
-        <input type="button" onclick="location.href='http://www.nj.gov/dep/rules/rules/njac7_14.pdf'" name="wPCARulesBtn" value="WPCA Rules 7:14" class="li">
-        
-        <input type="submit" id="clearBtnHeader" value="Clear this form" onclick="javascript:history.go(0)" class="li" />
+        <input type="button" onclick="openCZM()" name="cZMRulesBtn" value="CZM Rules 7:7" class="li">
+        <input type="button" onclick="openFWW()" name="fWWRulesBtn" value="FWW Rules 7:7a" class="li">
+        <input type="button" onclick="openSWM()" name="sWMRulesBtn" value="SWM Rules 7:8" class="li">
+        <input type="button" onclick="openSWQ()" name="sWQRulesBtn" value="SWQ Rules 7:9b" class="li">
+        <input type="button" onclick="openFHA()" name="fHARulesBtn" value="FHA Rules 7:13" class="li">
+        <input type="button" onclick="openWPCA()" name="wPCARulesBtn" value="WPCA Rules 7:14" class="li">
+        <input type="button" onclick="openDEPHome()" value="NJDEP Home" class="li" name="homeBtn" />
+        <input type="submit" id="clearBtnHeader" value="Clear Form" onclick="javascript:history.go(0)" class="li" />
       </ul>
       <link rel="stylesheet" href="css/c01.css" />
     </header>
