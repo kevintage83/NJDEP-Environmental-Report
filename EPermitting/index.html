@@ -20,6 +20,7 @@
     <br/>
     <br/>
     <br/>
+    <script type="text/javascript" src="js/cleanJSAutoFileNumFormat.js"></script>
   </head>
   <script src="js/greeting.js"></script>
   <body class="mainBody">
@@ -34,9 +35,10 @@
 
 
       <label for="fileNumField" name="fileNumField"><b>File #</b>:
-        <input type="number" name="fileNumField" placeholder="Enter application file number" id="fileNumField" pattern="\d{4}[\-]\d{2}[\-]\d{4}[\.]\d{1}" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
-      </label>      
-      <span id="myFileHint" class="hint"></span><span id="formError" class="error"></span>
+        <input type="text" name="txtInput" onkeydown="javascript:backspacerDOWN(this,event);" onkeyup="javascript:backspacerUP(this,event);" placeholder="Enter application file number" id="fileNumField" onfocus="this.placeholder= ''" onblur="this.placeholder= 'Mandatory. Please fill-out.'" />
+      </label>
+      <small><b>(Numeric only. Dashes and decimals will appear automatically.)</b></small>
+      <span id="myFileHint" class="hint"></span>
       <br />
 
 

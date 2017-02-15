@@ -18,15 +18,36 @@ var blockNum; //last name
 function getApplicantName() {  
     return document.getElementById("nameField").value;
 }
-function getBlockNum()    {
+function getBlockNum() {
     return document.getElementById("blockNumField").value;
+}
+/*function getLotNum() {
+//    return document.getElementById("lotNumField").value;
+//}
+//function getWtrshdMgt() {
+//    return document.getElementById("watershedMgtField").value;
+}*/
+function getWtrshd() {
+    return document.getElementById("watershedField").value;
+}
+function getSubWtrshd() {
+    return document.getElementById("subWatershedField").value;
+}
+function getWtrwy() {
+    return document.getElementById("waterwayField").value;
 }
 
 function display()  {
     applicantName = getApplicantName();
     blockNum = getBlockNum();
-    window.alert(applicantName + " " + blockNum);
-    document.getElementById("theWholeForm").submit();
+    lotNum = document.getElementById("lotNumField").value;
+    getWtrshdMgt = document.getElementById("watershedMgtField").value;
+    getWtrshd = getWtrshd();
+    getSubWtrshd = getSubWtrshd();
+    getWtrwy = getWtrwy();
+    getWtrClass = document.getElementById("troutProd").value;
+    window.alert(applicantName + " " + blockNum + " " + lotNum + " " + getWtrshdMgt + " " + getWtrshd + " " + getSubWtrshd + " " + getWtrwy + " " + getWtrClass);
+    document.getElementById("wholeForm").submit();
     
 }
 

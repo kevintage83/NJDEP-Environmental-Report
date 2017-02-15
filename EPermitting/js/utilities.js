@@ -11,7 +11,7 @@ function addEvent(el, event, callback) {
   }
 }
 
-//Adds user-input controls for File number format
+/*Adds user-input controls for File number format
 var myFileNum = document.wholeForm.fileNumField;
 var myFileNumError = document.getElementById("formError");
 
@@ -26,7 +26,7 @@ if (!(isValid)) {
 } 
 
 }
-
+*/
 
 //Adds user-input guidance for Applicant Name format
 document.wholeForm.nameField.onfocus = function() {
@@ -42,7 +42,7 @@ document.wholeForm.nameField.onblur = function() {
 
 //Adds user-input guidance for Application File Number format
 document.wholeForm.fileNumField.onfocus = function() {
-  document.getElementById('myFileHint').innerHTML = "(e.g., 1234-56-7890.12)";
+  document.getElementById('myFileHint').innerHTML = "(e.g., 1234-56-7890.1 or 1234-56-7890.12)";
 }
 
 //Removes user-input guidance for Application File Number format
